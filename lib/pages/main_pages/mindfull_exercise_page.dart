@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:meditator/models/mindfull_exercise_model.dart';
 import 'package:meditator/providers/mindfull_exercise_provider.dart';
+import 'package:meditator/router/route_names.dart';
 import 'package:meditator/utils/colors.dart';
 import 'package:meditator/utils/text_styles.dart';
 import 'package:provider/provider.dart';
@@ -93,13 +97,13 @@ class MindFullExercisePage extends StatelessWidget {
                               ),
                             ),
                             onTap: () {
-                              // GoRouter.of(context).pushNamed(
-                              //   RouteNames.mindFullExercise,
-                              //   queryParameters: {
-                              //     'mindfullExercise':
-                              //         jsonEncode(mindfullExercise.toJson()),
-                              //   },
-                              // );
+                              GoRouter.of(context).pushNamed(
+                                RouteNames.mindFullExercise,
+                                queryParameters: {
+                                  'mindfullExercise':
+                                      jsonEncode(mindfullExercise.toJson()),
+                                },
+                              );
                             },
                           ),
                         );
