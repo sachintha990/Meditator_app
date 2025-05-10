@@ -7,6 +7,7 @@ import 'package:meditator/models/sleep_content_model.dart';
 import 'package:meditator/pages/functions_page.dart';
 import 'package:meditator/pages/main_screen.dart';
 import 'package:meditator/pages/mindfull_exercise_details_page.dart';
+import 'package:meditator/pages/mindfull_exercise_timer.dart';
 import 'package:meditator/router/route_names.dart';
 
 class RouterClass {
@@ -58,20 +59,20 @@ class RouterClass {
       //     );
       //   },
       // ),
-      // GoRoute(
-      //   name: RouteNames.midfullExerciseTimer,
-      //   path: "/mindfullExerciseTimer",
-      //   builder: (context, state) {
-      //     final mindfullExerciseJson =
-      //         state.uri.queryParameters['mindfullExercise'];
-      //     final mindfullExercise =
-      //         MindfulnessExercise.fromJson(jsonDecode(mindfullExerciseJson!));
+      GoRoute(
+        name: RouteNames.midfullExerciseTimer,
+        path: "/mindfullExerciseTimer",
+        builder: (context, state) {
+          final mindfullExerciseJson =
+              state.uri.queryParameters['mindfullExercise'];
+          final mindfullExercise =
+              MindfulnessExercise.fromJson(jsonDecode(mindfullExerciseJson!));
 
-      //     return MindFullExerciseTimer(
-      //       mindfullExercise: mindfullExercise,
-      //     );
-      //   },
-      // ),
+          return MindFullExerciseTimer(
+            mindfullExercise: mindfullExercise,
+          );
+        },
+      ),
     ],
   );
 }
