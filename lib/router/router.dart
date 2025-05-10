@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:go_router/go_router.dart';
 import 'package:meditator/models/functions_model.dart';
 import 'package:meditator/models/mindfull_exercise_model.dart';
@@ -8,6 +7,7 @@ import 'package:meditator/pages/functions_page.dart';
 import 'package:meditator/pages/main_screen.dart';
 import 'package:meditator/pages/mindfull_exercise_details_page.dart';
 import 'package:meditator/pages/mindfull_exercise_timer.dart';
+import 'package:meditator/pages/sleep_story_timer_page.dart';
 import 'package:meditator/router/route_names.dart';
 
 class RouterClass {
@@ -46,19 +46,19 @@ class RouterClass {
           );
         },
       ),
-      // GoRoute(
-      //   name: RouteNames.sleepStoryTimer,
-      //   path: "/sleepStoryTimer",
-      //   builder: (context, state) {
-      //     final sleepContentJson = state.uri.queryParameters['sleepContent'];
-      //     final sleepContentData =
-      //         SleepContent.fromJson(jsonDecode(sleepContentJson!));
+      GoRoute(
+        name: RouteNames.sleepStoryTimer,
+        path: "/sleepStoryTimer",
+        builder: (context, state) {
+          final sleepContentJson = state.uri.queryParameters['sleepContent'];
+          final sleepContentData =
+              SleepContent.fromJson(jsonDecode(sleepContentJson!));
 
-      //     return SleepStoryTimerPage(
-      //       sleepContent: sleepContentData,
-      //     );
-      //   },
-      // ),
+          return SleepStoryTimerPage(
+            sleepContent: sleepContentData,
+          );
+        },
+      ),
       GoRoute(
         name: RouteNames.midfullExerciseTimer,
         path: "/mindfullExerciseTimer",
