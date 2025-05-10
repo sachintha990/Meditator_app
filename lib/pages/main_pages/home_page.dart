@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
+import 'package:meditator/models/functions_model.dart';
 import 'package:meditator/models/mindfull_exercise_model.dart';
 import 'package:meditator/models/sleep_content_model.dart';
 import 'package:meditator/providers/filter_provider.dart';
@@ -76,20 +77,20 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        // GoRouter.of(context).push(
-                        //   '/functions',
-                        //   // Passing the data to the next page
-                        //   extra: FunctionsData(
-                        //     category,
-                        //     title: title,
-                        //     duration: duration,
-                        //     description: description,
-                        //     url: videoUrl,
-                        //   ),
-                        // );
+                        GoRouter.of(context).push(
+                          '/functions',
+                          // Passing the data to the next page
+                          extra: FunctionsData(
+                            category,
+                            title: title,
+                            duration: duration,
+                            description: description,
+                            url: videoUrl,
+                          ),
+                        );
 
-                        // //close the bottom sheet
-                        // Navigator.pop(context);
+                        //close the bottom sheet
+                        Navigator.pop(context);
                       },
                       child: const Text(
                         "Start",
@@ -130,23 +131,23 @@ class HomePage extends StatelessWidget {
   }
 
   //handle mindfullness exercises pressed
-  // void handleMindfullnessPressed(
-  //     BuildContext context, MindfulnessExercise data) {
-  //   GoRouter.of(context)
-  //       .pushNamed(RouteNames.midfullExerciseTimer, queryParameters: {
-  //     'mindfullExercise': jsonEncode(
-  //       data.toJson(),
-  //     )
-  //   });
-  // }
+  void handleMindfullnessPressed(
+      BuildContext context, MindfulnessExercise data) {
+    GoRouter.of(context)
+        .pushNamed(RouteNames.midfullExerciseTimer, queryParameters: {
+      'mindfullExercise': jsonEncode(
+        data.toJson(),
+      )
+    });
+  }
 
   //handle sleep stories pressed
-  // void handleSleepStoriesPressed(BuildContext context, SleepContent data) {
-  //   GoRouter.of(context)
-  //       .pushNamed(RouteNames.sleepStoryTimer, queryParameters: {
-  //     'sleepContent': jsonEncode(data.toJson()),
-  //   });
-  // }
+  void handleSleepStoriesPressed(BuildContext context, SleepContent data) {
+    GoRouter.of(context)
+        .pushNamed(RouteNames.sleepStoryTimer, queryParameters: {
+      'sleepContent': jsonEncode(data.toJson()),
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -344,20 +345,20 @@ class HomePage extends StatelessWidget {
                               return GestureDetector(
                                 onTap: () {
                                   //handle the event according to the data type
-                                  // if (data is MindfulnessExercise) {
-                                  //   handleMindfullnessPressed(context, data);
-                                  // } else if (data is SleepContent) {
-                                  //   handleSleepStoriesPressed(context, data);
-                                  // } else {
-                                  //   openBottomSheet(
-                                  //     context,
-                                  //     data.name,
-                                  //     data.duration,
-                                  //     data.description,
-                                  //     data.category,
-                                  //     data.videoUrl ?? '',
-                                  //   );
-                                  // }
+                                  if (data is MindfulnessExercise) {
+                                    handleMindfullnessPressed(context, data);
+                                  } else if (data is SleepContent) {
+                                    handleSleepStoriesPressed(context, data);
+                                  } else {
+                                    openBottomSheet(
+                                      context,
+                                      data.name,
+                                      data.duration,
+                                      data.description,
+                                      data.category,
+                                      data.videoUrl ?? '',
+                                    );
+                                  }
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
