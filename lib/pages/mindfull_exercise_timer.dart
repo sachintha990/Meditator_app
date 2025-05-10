@@ -60,7 +60,7 @@ class MindFullExerciseTimer extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       // ignore: deprecated_member_use
-                      color: AppColors.primaryGreen.withOpacity(0.1),
+                      color: AppColors.primaryGreen.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
                         // ignore: deprecated_member_use
