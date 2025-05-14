@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:meditator/pages/main_pages/create_custom_exercise.dart';
-import 'package:meditator/pages/main_pages/custom_exercises.dart';
+import 'package:meditator/pages/main_pages/custum_exercises.dart';
 import 'package:meditator/pages/main_pages/home_page.dart';
 import 'package:meditator/pages/main_pages/mindfull_exercise_page.dart';
 import 'package:meditator/pages/main_pages/profile_page.dart';
@@ -18,10 +18,10 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    CreateCustomExercise(),
+    CustomExercises(),
     HomePage(),
     MindFullExercisePage(),
-    CustomExercises(),
+    CreateCustomExercise(),
     ProfilePage(),
   ];
 

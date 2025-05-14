@@ -4,6 +4,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:meditator/models/meditation_model.dart';
 import 'package:meditator/models/mindfull_exercise_model.dart';
 import 'package:meditator/models/sleep_content_model.dart';
+import 'package:meditator/providers/custom_data_provider.dart';
 import 'package:meditator/router/router.dart';
 
 import 'package:provider/provider.dart';
@@ -26,18 +27,11 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => MindfullExerciseProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => MeditationProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => SleepContentProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => FilterdDataprovider(),
-        ),
+        ChangeNotifierProvider(create: (context) => MindfullExerciseProvider()),
+        ChangeNotifierProvider(create: (context) => MeditationProvider()),
+        ChangeNotifierProvider(create: (context) => SleepContentProvider()),
+        ChangeNotifierProvider(create: (context) => FilterdDataprovider()),
+        ChangeNotifierProvider(create: (context) => CustomDataProvider()),
       ],
       child: const MyApp(),
     ),
