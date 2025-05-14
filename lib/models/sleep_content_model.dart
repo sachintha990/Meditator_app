@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+part 'sleep_content_model.g.dart';
 
 @HiveType(typeId: 2)
 class SleepContent {

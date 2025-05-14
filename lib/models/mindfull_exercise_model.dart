@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+part 'mindfull_exercise_model.g.dart';
 
 
 @HiveType(typeId: 1)

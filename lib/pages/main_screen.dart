@@ -18,9 +18,9 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
+    CreateCustomExercise(),
     HomePage(),
     MindFullExercisePage(),
-    CreateCustomExercise(),
     CustomExercises(),
     ProfilePage(),
   ];
