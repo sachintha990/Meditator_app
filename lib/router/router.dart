@@ -4,6 +4,7 @@ import 'package:meditator/models/functions_model.dart';
 import 'package:meditator/models/mindfull_exercise_model.dart';
 import 'package:meditator/models/sleep_content_model.dart';
 import 'package:meditator/pages/functions_page.dart';
+import 'package:meditator/pages/main_pages/create_custom_exercise.dart';
 import 'package:meditator/pages/main_screen.dart';
 import 'package:meditator/pages/mindfull_exercise_details_page.dart';
 import 'package:meditator/pages/mindfull_exercise_timer.dart';
@@ -73,6 +74,13 @@ class RouterClass {
           );
         },
       ),
+      GoRoute(
+        name: RouteNames.create,
+        path: "/create",
+        builder: (context, state) {
+          return const CreateCustomExercise();
+        },
+      )
     ],
   );
 }
